@@ -56,7 +56,7 @@ A multisine input signal for the single-input, single output(SISO) case is repre
 <p align="center">
   <img src="https://github.com/user-attachments/assets/67570e30-0b56-43df-9564-cceadcb525af">
 </p>
-where $\omega_i$ = $2\pi/{N_s T_s}$. The power spectrum in a multisine input can be directly specified by the user through the selection of the scaling factor l , the Fourier coefficients $\alpha_{R_{j}}$, the number of harmonics $n_s$, the signal length $N_s$, and the sampling time $T_s$. Since $n_s$ is the number of persistent excitation within the primary bandwidth, the order of model estimate should be less than $n_s$ such that model Order: n ≤ ns.
+where $\omega_{i}$ = 2\pi/{N_s T_s}$. The power spectrum in a multisine input can be directly specified by the user through the selection of the scaling factor l , the Fourier coefficients $\alpha_{R_{j}}$, the number of harmonics $n_s$, the signal length $N_s$, and the sampling time $T_s$. Since $n_s$ is the number of persistent excitation within the primary bandwidth, the order of model estimate should be less than $n_s$ such that model Order: n ≤ ns.
 
 The primary frequency bandwidth of the input signal is bounded by the design variables as follows:
 
@@ -64,6 +64,7 @@ The primary frequency bandwidth of the input signal is bounded by the design var
 <img  src="https://github.com/user-attachments/assets/9d6419b2-5562-4248-9f0d-911ad67e35ed">
 </p> 
 
-where $\pi/T_s$ is the Nyquist frequency. As a result, a multisine input signal is designed to cover this frequency bandwidth via specifying $n_s$, $N_s$, and $T_s$.
+where $\pi/T_s$ is the Nyquist frequency. As a result, a multisine input signal can designed to cover this frequency bandwidth via specifying $n_s$, $N_s$, and $T_s$. In practice, multisine input signals are designed using the crest-factor minimization approach as per Guillaume et al 2001.
+
 
 
