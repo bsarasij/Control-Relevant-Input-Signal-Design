@@ -28,7 +28,7 @@ The influence of Open-loop modeling error over closed-loop performance can be in
 CRPEP is effectively a frequency-weighted optimization problem that reduces the closed-loop error by minimizing the contribution arising from open-loop estimation. The exact equation is shown here, and the derivation is noted in the paper. 
 <p align = "center">
 <img src="https://github.com/user-attachments/assets/d052a37d-a37a-4100-9944-552886a30ec4"> 
-</p>p
+</p>
 The weight can be designed to satisfy the closed-loop requirements, provided the information regarding the nominal performances, and the type of the control problem (setpoint tracking/disturbance rejection) are available. 
 
 The CRPEP problem for the integrating or slow first-order system involves the design of a control-relevant weight that de-emphasizes the low-frequency steady-state fit of the model and focuses on the control-relevant dynamics through a notch emphasis. As the desired speed of response increases, this region of interest shifts towards the right of the open-loop bandwidth, more and more to the high-frequency region, and as a result, the control-relevant weight also shifts its notch emphasis to reduce the corresponding control-relevant modeling error. And this addresses the challenge of systematic emphasis.
@@ -48,3 +48,22 @@ This spectrum can finally be realized in the time domain using plant-friendly mu
 <p align="center">
 <img width="500" height="500" src="https://github.com/user-attachments/assets/1bcfb8e1-2644-4313-929a-c64d95f92728">
 </p>
+
+
+# Multisine Input Signal
+
+A multisine input signal for the single-input, single output(SISO) case is represented by the following equation (Schroeder, 1970; Bayard, 1993b):
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/67570e30-0b56-43df-9564-cceadcb525af">
+</p>
+where $\omega_i$ = $2\pi/{N_s T_s}$. The power spectrum in a multisine input can be directly specified by the user through the selection of the scaling factor l , the Fourier coefficients $\alpha_{R_{j}}$, the number of harmonics $n_s$, the signal length $N_s$, and the sampling time $T_s$. Since $n_s$ is the number of persistent excitation within the primary bandwidth, the order of model estimate should be less than $n_s$ such that model Order: n ≤ ns.
+
+The primary frequency bandwidth of the input signal is bounded by the design variables as follows:
+
+<p align="center">
+<img  src="https://github.com/user-attachments/assets/9d6419b2-5562-4248-9f0d-911ad67e35ed">
+</p> 
+
+where $\pi/T_s$ is the Nyquist frequency. As a result, a multisine input signal is designed to cover this frequency bandwidth via specifying $n_s$, $N_s$, and $T_s$.
+
+
