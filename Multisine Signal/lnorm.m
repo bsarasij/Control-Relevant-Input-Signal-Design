@@ -1,0 +1,1 @@
+function Lp=lnorm(A,p)%LNORM Calculate the vector Lp-norm of all the column vectors% present in the matrix A.% See also NORM. %%	P.A.N. Guillaume - version 1 / 18 November 1990%	Copyright (c) 1990 by dept. ELEC, V.U.B.%if nargin==1, p=2; end[rowno,colno]=size(A);for i=1:colno, Lp(i)=norm(A(:,i),p); endif p~=inf, Lp=Lp/(rowno^(1/p)); end
